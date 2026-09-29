@@ -1,0 +1,13 @@
+streamlit>=1.49
+pandas
+numpy
+scikit-learn
+plotly
+joblib
+shap
+matplotlib
+xgboost
+imbalanced-learn
+openai
+python-dotenv
+groq

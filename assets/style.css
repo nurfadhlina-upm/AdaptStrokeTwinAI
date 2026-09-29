@@ -1,0 +1,196 @@
+/* =========================================================
+   ADAPTSTROKE TWIN AI
+   Corporate Clinical Theme
+   ========================================================= */
+
+.block-container {
+    padding-top: 1.3rem;
+    padding-bottom: 3rem;
+    max-width: 1450px;
+}
+
+/* ---------------------------------------------------------
+   MAIN APP
+   --------------------------------------------------------- */
+
+.stApp {
+    background: #F5F7FA;
+    color: #1F2937;
+}
+
+/* ---------------------------------------------------------
+   SIDEBAR
+   --------------------------------------------------------- */
+
+[data-testid="stSidebar"] {
+    background: #12263A;
+    border-right: 1px solid #D9E1E8;
+}
+
+[data-testid="stSidebar"] * {
+    color: #F8FAFC;
+}
+
+[data-testid="stSidebar"] [data-testid="stSidebarNav"] {
+    padding-top: 1rem;
+}
+
+/* Selected navigation item */
+[data-testid="stSidebar"] a[aria-current="page"] {
+    background: #29465F !important;
+    border-radius: 8px;
+}
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.twin-header {
+    padding: 15px 22px;
+    border-radius: 12px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #DCE4EA;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.05);
+
+    margin-bottom: 24px;
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: 750;
+    letter-spacing: 0.7px;
+    color: #17324D;
+}
+
+.brand-highlight {
+    color: #087F8C;
+}
+
+.subtitle {
+    color: #64748B;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* ---------------------------------------------------------
+   HEADINGS
+   --------------------------------------------------------- */
+
+h1, h2, h3 {
+    color: #17324D !important;
+}
+
+h1 {
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+}
+
+h2, h3 {
+    font-weight: 650 !important;
+}
+
+/* ---------------------------------------------------------
+   NATIVE STREAMLIT CONTAINERS
+   --------------------------------------------------------- */
+
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: #FFFFFF;
+    border-color: #DCE4EA !important;
+    border-radius: 12px !important;
+
+    box-shadow:
+        0 2px 6px rgba(15, 23, 42, 0.035);
+}
+
+/* ---------------------------------------------------------
+   METRICS
+   --------------------------------------------------------- */
+
+[data-testid="stMetric"] {
+    background: #FFFFFF;
+    border: 1px solid #DCE4EA;
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #64748B;
+}
+
+[data-testid="stMetricValue"] {
+    color: #17324D;
+}
+
+/* ---------------------------------------------------------
+   INPUTS
+   --------------------------------------------------------- */
+
+[data-baseweb="input"] > div,
+[data-baseweb="select"] > div,
+[data-baseweb="textarea"] > div {
+    background: #FFFFFF !important;
+    border-color: #CBD5E1 !important;
+}
+
+input,
+textarea {
+    color: #1F2937 !important;
+}
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+.stButton > button {
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid #087F8C;
+}
+
+.stButton > button[kind="primary"] {
+    background: #087F8C;
+    color: white;
+    border: none;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: #066A75;
+}
+
+/* ---------------------------------------------------------
+   DATAFRAME
+   --------------------------------------------------------- */
+
+[data-testid="stDataFrame"] {
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #DCE4EA;
+}
+
+/* ---------------------------------------------------------
+   INFO / WARNING / SUCCESS
+   --------------------------------------------------------- */
+
+[data-testid="stAlert"] {
+    border-radius: 9px;
+}
+
+/* ---------------------------------------------------------
+   DIVIDERS
+   --------------------------------------------------------- */
+
+hr {
+    border-color: #E2E8F0 !important;
+}
+
+/* ---------------------------------------------------------
+   CAPTION
+   --------------------------------------------------------- */
+
+.stCaptionContainer {
+    color: #64748B;
+}
