@@ -3,6 +3,7 @@ from core.twin_state import build_patient_state
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+from core.twin_state import build_patient_state
 
 from core.model_engine import (
     predict_binary,
@@ -118,6 +119,79 @@ c1.metric(
     ) or "—"
 )
 
+# ============================================================
+# STORED PROSPECTIVE HT PREDICTION
+# ============================================================
+
+patient_id = st.session_state.get("patient_id")
+
+current_risk = st.session_state.get(
+    "ht_probability"
+)
+
+prediction_stage = st.session_state.get(
+    "ht_prediction_stage"
+)
+
+prediction_patient = st.session_state.get(
+    "ht_prediction_patient"
+)
+
+
+# A What-If scenario requires an existing HT prediction
+if current_risk is None:
+
+    st.warning(
+        "No HT risk assessment is available for this patient. "
+        "Advance the patient twin to the Treatment stage and "
+        "complete HT Risk & Explanation first."
+    )
+
+    st.stop()
+
+
+# Ensure prediction belongs to current patient
+if prediction_patient != patient_id:
+
+    st.warning(
+        "The stored HT prediction belongs to another patient. "
+        "Please run HT Risk & Explanation for the current patient."
+    )
+
+    st.stop()
+
+# ============================================================
+# RECONSTRUCT TREATMENT-TIME PATIENT STATE
+# ============================================================
+
+patient_record = st.session_state.get(
+    "patient_record"
+)
+
+if patient_record is None:
+
+    st.error(
+        "The original patient record is unavailable."
+    )
+
+    st.stop()
+
+
+scenario_patient = build_patient_state(
+    patient_record,
+    "Treatment"
+)
+
+# What-If must use the prospective Treatment-stage prediction
+if prediction_stage != "Treatment":
+
+    st.warning(
+        "The available HT prediction was not generated at the "
+        "Treatment stage. Please generate a new prospective "
+        "HT assessment before running What-If analysis."
+    )
+
+    st.stop()
 
 c2.metric(
     "Current HT risk",
